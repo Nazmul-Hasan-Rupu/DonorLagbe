@@ -1,0 +1,18 @@
+<h3>Sign UP</h3>
+
+<form class="form">
+  <label class="label">Name</label>
+  <input class="inbox" type="string" placeholder="name" [(ngModel)]="selectedUser.fullName" [ngModelOptions]="{standalone: true}"/>
+  <label class="label">Email</label>
+  <input class="inbox" type="string" placeholder="name" [(ngModel)]="selectedUser.email" [ngModelOptions]="{standalone: true}"/>
+  <label class="label">Address</label>
+  <input class="inbox" type="string" placeholder="name" [(ngModel)]="selectedUser.address" [ngModelOptions]="{standalone: true}"/>
+  <label class="label">Phone Number</label>
+  <input class="inbox" type="string" placeholder="name" [(ngModel)]="selectedUser.phoneNumber" [ngModelOptions]="{standalone: true}"/>
+  <label class="label">Password</label>
+  <input class="inbox" type="password" placeholder="name" [(ngModel)]="selectedUser.password" [ngModelOptions]="{standalone: true}"/>
+  <label class="label">Confirm Password</label>
+  <input class="inbox" type="passowrd" placeholder="name" [(ngModel)]="this.cPassword" [ngModelOptions]="{standalone: true}"/>
+  <div style="color: red;" class="alert" *ngIf="serverErrorMessages">{{this.serverErrorMessages}}</div>
+  <button class="button" (click)="signUp()">SignUP</button>
+</form>

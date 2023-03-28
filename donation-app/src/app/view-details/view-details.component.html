@@ -1,0 +1,15 @@
+<h1 align="center">{{item.productName}} <br> </h1>
+<h2 align="center">{{item.condition}}</h2>
+
+<div class="cards">
+    <div *ngFor="let requester of requesters; let i = index">
+      <div class="card">
+        <label class="label"><b style="text-transform:uppercase"> {{ requester.fullName }}</b></label>
+        
+        <div> email: {{requester.email}}</div> 
+        <div> phone: {{requester.phoneNumber}}</div> 
+        <div> address: {{requester.address}}</div> 
+        
+      </div>
+    </div>
+  </div>

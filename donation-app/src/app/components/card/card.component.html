@@ -1,0 +1,55 @@
+<div class="cards">
+  <div *ngFor="let item of items; let i = index">
+    <div class="card">
+      <label class="label"><b style="text-transform:uppercase"> {{ item.productName }}</b></label>
+      
+      <div> uploaded: {{item.uploadDate}}</div> 
+      <div> condition: {{item.condition}}</div> 
+      <div> used Period: {{item.usedPeriod}}</div> 
+      
+      <div class="butbar">
+        <button class="button" *ngIf="userDetails._id!=item.uploaderID" data-bs-toggle="modal" data-bs-target="#claimModal" (click)="onClick(item)">Claim</button>
+        <button class="button" *ngIf="userDetails._id==item.uploaderID" (click)="onClickViewDetails(item)" >View Details</button>
+        <button class="button" (click)="deleteItem(item)" *ngIf="userDetails._id==item.uploaderID" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onClick(item)">Delete</button>
+        <button class="button" (click)="updateItem(item, i)" *ngIf="userDetails._id==item.uploaderID">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure that you want to delete?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="delete()" data-bs-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="claimModal" tabindex="-1" aria-labelledby="claimModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="claimModalLabel">Do you want to claim this item?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="claim()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

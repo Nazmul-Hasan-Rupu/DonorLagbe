@@ -1,0 +1,51 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blueviolet;
+  margin: 20px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 10px;
+}
+
+.label {
+  margin-inline: auto;
+  margin: 20px;
+  text-align: center;
+}
+
+.button {
+  width: fit-content;
+  background-color: aqua;
+  border-radius: 5px;
+  margin-top: 50px;
+  z-index: 10px;
+  border: 0.5px solid black;
+  box-shadow: inset;
+}
+
+.button:hover {
+  background-color: aquamarine;
+}
+
+.butbar {
+  margin-top: auto;
+  margin-left: auto;
+  padding: 10px;
+}
